@@ -29,4 +29,4 @@ def start_background_pinger():
 
 if __name__ == '__main__':
     start_background_pinger()
-    app.run(host='0.0.0.0', port=3000)
+    app.run(host='0.0.0.0', port=7860)
