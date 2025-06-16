@@ -1,11 +1,12 @@
-from flask import Flask
+from flask import Flask, send_from_directory
 import threading
 import time
 import requests
+import os
 
 app = Flask(__name__)
 
-# 🔁 Set your target Render URL here
+# 🔁 Set your target URL here
 TARGET_URL = "https://direct-download.onrender.com/"
 
 # 🔄 Background task to ping every 60 seconds
@@ -20,9 +21,27 @@ def ping_target():
 
 @app.route('/')
 def home():
-    return "Uptime Pinger is Running!", 200
+    return '''
+        <html>
+            <head>
+                <title>Uptime Pinger</title>
+                <link rel="icon" href="/favicon.ico" type="image/x-icon">
+            </head>
+            <body>
+                <h1>Uptime Pinger is Running! 🚀</h1>
+            </body>
+        </html>
+    '''
 
-# Start pinging as a background thread
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(
+        os.path.join(app.root_path, 'static'),
+        'favicon.ico',
+        mimetype='image/vnd.microsoft.icon'
+    )
+
+# Start background thread
 def start_background_pinger():
     thread = threading.Thread(target=ping_target, daemon=True)
     thread.start()
