@@ -44,7 +44,7 @@ def home():
                 justify-content: center;
                 align-items: center;
                 min-height: 100vh;
-                position: relative;
+                padding-bottom: 50px; /* Space for footer */
             }
 
             .container {
@@ -57,6 +57,7 @@ def home():
                 max-width: 340px;
                 width: 90%;
                 text-align: center;
+                z-index: 1;
             }
 
             h1 {
@@ -91,12 +92,16 @@ def home():
             }
 
             .footer {
-                position: absolute;
-                bottom: 10px;
-                font-size: 0.85rem;
-                color: #aaa;
-                text-align: center;
+                position: fixed;
+                bottom: 0;
+                left: 0;
                 width: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                text-align: center;
+                padding: 10px 0;
+                font-size: 0.9rem;
+                color: #ccc;
+                z-index: 0;
             }
 
             .footer a {
@@ -114,7 +119,7 @@ def home():
             <p>🔔 Stay tuned for upcoming features & updates!</p>
         </div>
 
-        <div class="footer">❤️ Developed by <a href="#">Sanchit</a></div>
+        <div class="footer">🤍 Developed by <a href="#">Sanchit</a></div>
     </body>
     </html>
     '''
