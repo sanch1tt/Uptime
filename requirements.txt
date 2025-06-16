@@ -1,5 +1,4 @@
-flask[async]
-flask-cors
+flask
 threading
 time
 requests
