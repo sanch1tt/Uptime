@@ -82,7 +82,7 @@ def home():
             <div class="container">
                 <h1>✅ Uptime Pinger is Running! 🚀</h1>
                 <p>📢 Join our channel:</p>
-                <a href="https://t.me/Opleech_WD" class="btn" target="_blank">@S4NCHITT</a>
+                <a href="https://t.me/Opleech_WD" class="btn" target="_blank">@OpleechWD</a>
                 <p>🔔 Stay tuned for upcoming features & updates!</p>
             </div>
         </body>
