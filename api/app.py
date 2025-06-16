@@ -30,32 +30,37 @@ def home():
         <title>Uptime Pinger</title>
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
         <style>
-            body {
+            * {
                 margin: 0;
                 padding: 0;
+                box-sizing: border-box;
+            }
+            body {
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 background: linear-gradient(160deg, #0f2027, #203a43, #2c5364);
+                color: white;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                height: 100vh;
-                color: white;
+                min-height: 100vh;
+                position: relative;
             }
 
             .container {
                 background: rgba(255, 255, 255, 0.05);
-                border-radius: 15px;
                 border: 1px solid rgba(255,255,255,0.4);
-                padding: 30px 20px;
-                text-align: center;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                padding: 25px 20px;
+                border-radius: 15px;
+                box-shadow: 0 0 15px rgba(255,255,255,0.2), 0 4px 30px rgba(0,0,0,0.5);
                 backdrop-filter: blur(10px);
-                max-width: 350px;
+                max-width: 340px;
+                width: 90%;
+                text-align: center;
             }
 
             h1 {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
                 margin-bottom: 15px;
                 color: #00eaff;
                 text-shadow: 0 0 8px #00eaff;
@@ -64,19 +69,20 @@ def home():
             p {
                 margin: 10px 0;
                 font-size: 1rem;
-                text-shadow: 0 0 5px rgba(255,255,255,0.3);
+                text-shadow: 0 0 3px rgba(255,255,255,0.4);
             }
 
             .btn {
                 display: inline-block;
                 background-color: #00bfff;
-                padding: 12px 20px;
+                padding: 12px 22px;
                 border-radius: 10px;
                 text-decoration: none;
                 font-weight: bold;
                 color: white;
                 box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
                 transition: 0.2s ease-in-out;
+                margin-bottom: 10px;
             }
 
             .btn:hover {
@@ -85,9 +91,12 @@ def home():
             }
 
             .footer {
-                margin-top: 20px;
+                position: absolute;
+                bottom: 10px;
                 font-size: 0.85rem;
-                color: #ccc;
+                color: #aaa;
+                text-align: center;
+                width: 100%;
             }
 
             .footer a {
@@ -104,6 +113,7 @@ def home():
             <a class="btn" href="https://t.me/Opleech_WD" target="_blank">@Opleech_WD</a>
             <p>🔔 Stay tuned for upcoming features & updates!</p>
         </div>
+
         <div class="footer">❤️ Developed by <a href="#">Sanchit</a></div>
     </body>
     </html>
