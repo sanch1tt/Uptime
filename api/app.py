@@ -35,60 +35,60 @@ def home():
                 padding: 0;
                 box-sizing: border-box;
             }
+
             body {
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                background: linear-gradient(160deg, #0f2027, #203a43, #2c5364);
-                color: white;
+                background-color: #0f1f2d;
+                color: #fff;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 align-items: center;
+                justify-content: center;
                 min-height: 100vh;
-                padding-bottom: 50px; /* Space for footer */
+                padding-bottom: 60px;
             }
 
             .container {
                 background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(255,255,255,0.4);
-                padding: 25px 20px;
-                border-radius: 15px;
-                box-shadow: 0 0 15px rgba(255,255,255,0.2), 0 4px 30px rgba(0,0,0,0.5);
+                padding: 30px 25px;
+                border-radius: 20px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 4px 15px rgba(0,0,0,0.3), 0 0 25px rgba(0,255,255,0.1);
                 backdrop-filter: blur(10px);
-                max-width: 340px;
-                width: 90%;
                 text-align: center;
-                z-index: 1;
+                max-width: 330px;
+                width: 90%;
             }
 
             h1 {
-                font-size: 1.4rem;
-                margin-bottom: 15px;
-                color: #00eaff;
-                text-shadow: 0 0 8px #00eaff;
+                font-size: 1.3rem;
+                margin-bottom: 18px;
+                color: #00f0ff;
+                text-shadow: 0 0 8px #00f0ff;
             }
 
             p {
-                margin: 10px 0;
-                font-size: 1rem;
-                text-shadow: 0 0 3px rgba(255,255,255,0.4);
+                font-size: 0.95rem;
+                margin-bottom: 15px;
+                color: #fff;
+                text-shadow: 0 0 3px rgba(255,255,255,0.2);
             }
 
             .btn {
                 display: inline-block;
-                background-color: #00bfff;
-                padding: 12px 22px;
-                border-radius: 10px;
+                padding: 12px 26px;
+                background-color: #00d5ff;
+                color: #fff;
                 text-decoration: none;
+                border-radius: 12px;
                 font-weight: bold;
-                color: white;
-                box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
-                transition: 0.2s ease-in-out;
-                margin-bottom: 10px;
+                box-shadow: 0 0 12px #00eaff, 0 0 22px #00eaff;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
             }
 
             .btn:hover {
                 transform: scale(1.05);
-                box-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff;
+                box-shadow: 0 0 20px #00eaff, 0 0 30px #00eaff;
             }
 
             .footer {
@@ -96,16 +96,15 @@ def home():
                 bottom: 0;
                 left: 0;
                 width: 100%;
-                background: rgba(0, 0, 0, 0.5);
+                background: rgba(0, 0, 0, 0.4);
                 text-align: center;
                 padding: 10px 0;
                 font-size: 0.9rem;
                 color: #ccc;
-                z-index: 0;
             }
 
             .footer a {
-                color: #00eaff;
+                color: #00f0ff;
                 text-decoration: none;
                 font-weight: bold;
             }
@@ -115,7 +114,7 @@ def home():
         <div class="container">
             <h1>✅ Uptime Pinger is Running! 🚀</h1>
             <p>📢 Join our channel:</p>
-            <a class="btn" href="https://t.me/Opleech_WD" target="_blank">@Opleech_WD</a>
+            <a href="https://t.me/Opleech_WD" class="btn" target="_blank">@Opleech_WD</a>
             <p>🔔 Stay tuned for upcoming features & updates!</p>
         </div>
 
