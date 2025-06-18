@@ -6,23 +6,25 @@ import os
 
 app = Flask(__name__)
 
-# 🔁 Set your target URL here
-TARGET_URL = "https://direct-download.onrender.com/"
+TARGET_URLS = [
+    "https://direct-download.onrender.com/",
+    "https://fz-post-search-bot.onrender.com"
+]
 
-# 🔄 Background task to ping every 60 seconds
 def ping_target():
     while True:
-        try:
-            response = requests.get(TARGET_URL)
-            print(f"[{time.ctime()}] Pinged {TARGET_URL} - Status: {response.status_code}", flush=True)
-        except Exception as e:
-            print(f"[{time.ctime()}] Ping failed: {e}", flush=True)
+        for url in TARGET_URLS:
+            try:
+                response = requests.get(url)
+                print(f"[{time.ctime()}] Pinged {url} - Status: {response.status_code}", flush=True)
+            except Exception as e:
+                print(f"[{time.ctime()}] Ping to {url} failed: {e}", flush=True)
         time.sleep(60)
 
 @app.route('/')
 def home():
     return '''
-        <!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -55,7 +57,7 @@ def home():
                 box-shadow: 0 8px 25px rgba(0,0,0,0.4), 0 0 40px rgba(255,255,255,0.2);
                 backdrop-filter: blur(8px);
                 width: 100%;
-                max-width: 450px;
+                max-width: 480px;
             }
             .inner-container {
                 background: rgba(255, 255, 255, 0.1);
@@ -130,10 +132,10 @@ def home():
     <body>
         <div class="outer-container">
             <div class="inner-container">
-                <div class="heading"><i class="fas fa-check-circle"></i> Uptime Pinger is Running! <i class="fas fa-rocket"></i></div>
+                <div class="heading"><i class="fas fa-check-circle"></i> Multi URL Uptime Pinger <i class="fas fa-rocket"></i></div>
                 <div class="subheading"><i class="fas fa-bullhorn"></i> Join our channel:</div>
                 <a href="https://t.me/Opleech_WD" class="btn" target="_blank"><i class="fab fa-telegram-plane"></i> @Opleech_WD</a>
-                <div class="updates"><i class="fas fa-bell"></i> Stay tuned for upcoming features & updates!</div>
+                <div class="updates"><i class="fas fa-bell"></i> Monitoring multiple services 24/7!</div>
             </div>
         </div>
         <div class="footer">
@@ -151,7 +153,6 @@ def favicon():
         mimetype='image/vnd.microsoft.icon'
     )
 
-# Start background thread
 def start_background_pinger():
     thread = threading.Thread(target=ping_target, daemon=True)
     thread.start()
@@ -159,3 +160,4 @@ def start_background_pinger():
 if __name__ == '__main__':
     start_background_pinger()
     app.run(host='0.0.0.0', port=7860)
+    
